@@ -18,14 +18,12 @@ import views.html.*;
 // Import models
 // Import security controllers
 
-
+// Authenticate user
+@Security.Authenticated(Secured.class)
+// Authorise user(check if user is a customer
+@With(CheckIfCustomer.class)
 
     public class ShoppingCtrl extends Controller {
-
-     // Authenticate user
-        @Security.Authenticated(Secured.class)
-     // Authorise user(check if user is a customer
-        @With(CheckIfCustomer.class)
 
         @Transactional
         public Result showBasket() {

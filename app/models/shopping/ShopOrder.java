@@ -44,7 +44,7 @@ public class ShopOrder extends Model {
     }
 	
 	//Generic query helper
-    public static Finder<Long,ShopOrder> find = new Finder<Long,ShopOrder>(ShopOrder.class);
+    public static Finder<Long,ShopOrder> find = new Finder<>(ShopOrder.class);
 
     //Find all Products in the database
     public static List<ShopOrder> findAll() {
